@@ -1,0 +1,115 @@
+
+.my-container {
+  margin-top: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 40px;
+  max-width: 350px;
+  min-height: 550px;
+  background: linear-gradient(
+    112.4deg,
+    rgb(176, 174, 225) 44.9%,
+    rgb(135, 197, 235) 94.5%
+  );
+  border-radius: 20px;
+  font-family: "Raleway", sans-serif;
+  color: black;
+}
+
+.current-time {
+  font-size: 30px;
+}
+
+.my-col {
+  /* border: 1px solid black; */
+  text-align: center;
+}
+
+.temperature {
+  font-size: 35px;
+}
+
+.city-name {
+  font-size: 30px;
+}
+
+.day,
+.days,
+.time,
+.message {
+  font-size: 12px;
+}
+
+.weather-icon {
+  font-size: 80px;
+  color: rgb(116, 116, 226);
+}
+
+input {
+  font-size: 12px;
+  background-color: #ebeff5;
+}
+
+#search-engine {
+  border-radius: 17px;
+  border: 1px solid #ebeff5;
+  padding: 5px;
+  width: 160px;
+}
+
+.message,
+.search-engine {
+  width: 140px;
+  /* margin-left: 20px; */
+}
+
+#btn {
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #ebeff5;
+  padding: 5px 15px;
+  transition: all 2ms ease-in;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#btn:hover {
+  background-color: ghostwhite;
+}
+
+.description {
+  text-align: center;
+}
+
+hr {
+  background-color: #fff;
+}
+
+.emojis {
+  font-size: 30px;
+}
+
+#submit {
+  display: none;
+}
+
+#celcius,
+#fahrenheit {
+  font-size: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+#celcius:hover {
+  text-decoration: underline;
+}
+
+#fahrenheit:hover {
+  text-decoration: underline;
+}
+
+.units {
+  font-size: 12px;
+  position: relative;
+  top: -8px;
+}
