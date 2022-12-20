@@ -28,7 +28,7 @@ function showTime(time) {
   // background adaptation function
   let myContainer = document.querySelector(".my-container");
   let weatherIcon = document.querySelector(".weather-icon");
-  if (currentHour > 18 || currentHour < 6) {
+  if (currentHour >= 18 || currentHour < 6) {
     myContainer.style.background =
       "linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)";
     myContainer.style.color = "white";
