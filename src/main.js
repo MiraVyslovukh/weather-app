@@ -53,13 +53,18 @@ function showWeather(response) {
 }
 
 // search engine function & api call
-function searchCity(event) {
-  event.preventDefault();
+
+function searchCity(city) {
   let apiKey = "a4888af71c12fab15abb2092a9d7ef0e";
   let units = "metric";
-  let city = document.querySelector("#search-engine").value;
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiURL).then(showWeather);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#search-engine").value;
+  searchCity(city);
 }
 
 function searchCurrentLocation(position) {
@@ -68,8 +73,6 @@ function searchCurrentLocation(position) {
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiURL).then(showWeather);
 }
-
-
 
 function retrievePosition(event) {
   event.preventDefault();
@@ -104,7 +107,7 @@ time.innerHTML = showTime(currentTime);
 
 // searchengine call
 let search = document.getElementById("search-field");
-search.addEventListener("submit", searchCity);
+search.addEventListener("submit", handleSubmit);
 
 // cercius vs. fahrenheit function call
 celcius.addEventListener("click", changetoCelcius);
@@ -113,3 +116,5 @@ fahrenheit.addEventListener("click", changeToFahrenheit);
 // navigator.geolocation.getCurrentPosition(retrievePosition);
 let btn = document.querySelector("#btn");
 btn.addEventListener("click", retrievePosition);
+
+searchCity("Lviv");
