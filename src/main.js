@@ -50,6 +50,11 @@ function showWeather(response) {
   );
   document.querySelector(".description").innerHTML =
     response.data.weather[0].main;
+  let weatherIcon = document.querySelector("#weather-icon");
+  weatherIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 // search engine function & api call
