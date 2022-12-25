@@ -32,7 +32,7 @@ function showTime(time) {
     myContainer.style.background =
       "linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)";
     myContainer.style.color = "white";
-    weatherIcon.style.color = "#ebeff5";
+    // weatherIcon.style.color = "#ebeff5";
   } else {
     myContainer.style.background =
       "linear-gradient(112.4deg, rgb(176, 174, 225) 44.9%, rgb(135, 197, 235) 94.5%)";
