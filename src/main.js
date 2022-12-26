@@ -45,6 +45,7 @@ function showTime(time) {
 function showWeather(response) {
   document.querySelector(".city-name").innerHTML = response.data.name;
   document.querySelector("#search-engine").value = "";
+  tempInC = Math.round(response.data.main.temp);
   document.querySelector(".temperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -55,7 +56,6 @@ function showWeather(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  weatherIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
 // search engine function & api call
@@ -85,22 +85,6 @@ function retrievePosition(event) {
   navigator.geolocation.getCurrentPosition(searchCurrentLocation);
 }
 
-// cercius vs. fahrenheit function
-let temp = document.querySelector(".temperature");
-let temperature = temp.innerHTML;
-let celcius = document.querySelector("#celcius");
-let fahrenheit = document.querySelector("#fahrenheit");
-let tempInC = Math.round(temperature);
-let tempInF = Math.round((temperature * 9) / 5 + 32);
-
-function changetoCelcius(temperature) {
-  temp.innerHTML = tempInC;
-}
-
-function changeToFahrenheit(temperature) {
-  temp.innerHTML = tempInF;
-}
-
 // current day function call
 let day = document.querySelector(".day");
 let currentDay = new Date();
@@ -115,12 +99,34 @@ time.innerHTML = showTime(currentTime);
 let search = document.getElementById("search-field");
 search.addEventListener("submit", handleSubmit);
 
-// cercius vs. fahrenheit function call
-celcius.addEventListener("click", changetoCelcius);
-fahrenheit.addEventListener("click", changeToFahrenheit);
-
 // navigator.geolocation.getCurrentPosition(retrievePosition);
 let btn = document.querySelector("#btn");
 btn.addEventListener("click", retrievePosition);
+
+// cercius vs. fahrenheit function call
+
+let tempInC = null;
+
+function changeToFahrenheit(event) {
+  event.preventDefault();
+  //  celcius.classList.add("active");
+  //  fahrenheit.classList.remove("active");
+  let temp = document.querySelector(".temperature");
+  let tempInF = Math.round((tempInC * 9) / 5 + 32);
+  temp.innerHTML = tempInF;
+}
+
+function changetoCelcius(event) {
+  event.preventDefault();
+  // celcius.classList.remove("active");
+  // fahrenheit.classList.add("active");
+  let temp = document.querySelector(".temperature");
+  temp.innerHTML = tempInC;
+}
+
+let celcius = document.querySelector("#celcius");
+celcius.addEventListener("click", changetoCelcius);
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", changeToFahrenheit);
 
 searchCity("Lviv");
