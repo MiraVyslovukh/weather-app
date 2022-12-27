@@ -10,7 +10,7 @@
       rel="icon"
       id="favicon"
       type="image/x-icon"
-      href="/Users/mira/Desktop/Project/SheCodes/SheCodes/Plus/Week4/[updated] Weather app/images/favicon2.png"
+      href="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/060/448/original/favicon2.png?1672152145"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -32,55 +32,60 @@
   </head>
   <body>
     <div class="container my-container">
-      <div class="row justify-content-evenly">
-        <div class="col-6 my-col day mt-2 day">Sunday</div>
-        <div class="col-6 my-col mt-2 time">Time</div>
-        <!-- <div class="col-6 my-col mt-5 city">City</div> -->
-      </div>
+        <div class="weather-app-icon">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/060/449/original/logo.png?1672152237" alt="Weather app logo" class="image" style="max-width: 120px;">
+        </div>
       <div class="row align-items-center">
-        <div class="col-6 my-col">
-          <span class="temperature"></span>
-          <span class="units"
-            ><a href="#" id="celcius">°C</a> |
-            <a href="#" id="fahrenheit">°F</a></span
-          >
-        </div>
-        <div class="col-6 my-col current-time">10:30 AM</div>
+      <div class="col-7 my-col mt-2">
+        <form id="search-field">
+          <input
+            type="search"
+            autofocus="on"
+            autocomplete="off"
+            id="search-engine"
+            placeholder="Type a city..."
+          />
+          <input id="submit" type="submit" value="Submit" />
+        </form>
       </div>
-      <div class="row align-items-center">
-        <div class="col my-col city-name" id="city-name"></div>
+      <div class="col-5 my-col mt-2">
+        <button id="btn">My location</button>
       </div>
-      <div class="row">
-        <div class="col-7 my-col mt-2">
-          <form id="search-field">
-            <input
-              type="search"
-              autofocus="on"
-              autocomplete="off"
-              id="search-engine"
-              placeholder="Type a city..."
-            />
-            <input id="submit" type="submit" value="Submit" />
-          </form>
-        </div>
-        <div class="col-5 my-col mt-2">
-          <button id="btn">My location</button>
-        </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col my-col mt-2 city-name">Lviv</div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col my-col temp-info">
+        <span class="temperature"></span>
+        <span class="units"
+          ><a href="#" id="celcius">°C</a> |
+          <a href="#" id="fahrenheit">°F</a></span
+        >
       </div>
       <div class="row justify-content-center">
-        <div class="col my-col mt-3 day">
+        <div class="row justify-content-center">
           <img
             src="https://openweathermap.org/img/wn/04d@2x.png"
-            id="weather-icon" alt=""
+            id="weather-icon"
           />
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-6 my-col mt-3">
-          <div class="description">Clouds</div>
+        <div class="row">
+          <div class="col my-col mt-1 mb-1">
+            <div class="description">Clouds</div>
+          </div>
+          <div class="general-info">
+            <span class="day">Monday</span
+            ><span class="current-time">10:30 AM></span>
+            <div class="wind">Wind:</div>
+            <div class="humidity">Humidity:</div>
+          </div>
+          <div class="row justify-content-evenly">
+          </div>
         </div>
       </div>
-      <div class="row justify-content-center mt-5 days">
+
+      <div class="row justify-content-around mt-4 days">
         <div class="col my-col">Mon</div>
         <div class="col my-col">Tue</div>
         <div class="col my-col">Wed</div>
@@ -99,22 +104,18 @@
           <i class="fa-solid fa-cloud-rain"></i>
         </div>
       </div>
-      <div class="row justify-content-center mt-1 days">
+      <div class="row justify-content-around mt-1 days">
         <div class="col my-col">22°C</div>
         <div class="col my-col">18°C</div>
         <div class="col my-col">24°C</div>
         <div class="col my-col">28°C</div>
         <div class="col my-col">22°C</div>
       </div>
-      <div class="row justify-content-center">
-        <a
-          href="https://github.com/MiraVyslovukh/weather-app"
-          class="git-rep"
-          target="_blank"
-          >Git Repository</a
-        >
+        <div class="git-rep">
+        This project was coded by <a href="https://github.com/MiraVyslovukh" target="_blank">Mira Vyslovukh</a> and is open-sourced on <a href="https://github.com/MiraVyslovukh/weather-app" target="_blank">GitHub</a> and hosted on <a href="https://voluble-pudding-b4c8dc.netlify.app/" target="_blank">Netlify</a>
+  </div>
       </div>
-    </div>
+
     <script src="src/main.js"></script>
   </body>
 </html>

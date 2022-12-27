@@ -1,10 +1,13 @@
+body {
+  background-color: rgb(253, 250, 244);
+}
 .my-container {
-  margin-top: 50px;
+  margin-top: 40px;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 40px;
   max-width: 350px;
-  min-height: 590px;
+  min-height: 600px;
   background: linear-gradient(
     112.4deg,
     rgb(176, 174, 225) 44.9%,
@@ -12,11 +15,7 @@
   );
   border-radius: 20px;
   font-family: "Raleway", sans-serif;
-  color: black;
-}
-
-.current-time {
-  font-size: 30px;
+  color: #fff;
 }
 
 .my-col {
@@ -24,24 +23,58 @@
   text-align: center;
 }
 
+.weather-app-icon .image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
 .temperature {
   font-size: 35px;
+  position: relative;
+  margin-left: 16px;
 }
 
 .city-name {
   font-size: 30px;
 }
 
-.day,
 .days,
-.time,
 .message {
   font-size: 12px;
+  margin: 0 auto;
 }
 
-.weather-icon {
-  font-size: 80px;
-  color: rgb(116, 116, 226);
+.temp-info {
+  margin-bottom: -25px;
+}
+
+.general-info {
+  text-align: center;
+  position: relative;
+  margin-left: 16px;
+}
+
+.day,
+.current-time {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#weather-icon {
+  width: 130px;
+  position: relative;
+  margin-left: 16px;
+}
+
+.wind,
+.humidity {
+  text-align: center;
+  font-size: 11px;
+  color: gainsboro;
+  position: relative;
+  margin-right: 10px;
 }
 
 input {
@@ -59,14 +92,13 @@ input {
 .message,
 .search-engine {
   width: 140px;
-  /* margin-left: 20px; */
 }
 
 #btn {
   font-size: 12px;
   border-radius: 6px;
   border: 1px solid #ebeff5;
-  padding: 5px 15px;
+  padding: 3px 15px;
   transition: all 2ms ease-in;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -77,6 +109,9 @@ input {
 
 .description {
   text-align: center;
+  margin-top: -15px;
+  position: relative;
+  margin-left: 16px;
 }
 
 hr {
@@ -84,7 +119,7 @@ hr {
 }
 
 .emojis {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 #submit {
@@ -116,8 +151,19 @@ hr {
 }
 
 .git-rep {
-  text-align: center;
-  font-size: 10px;
-  margin-top: 30px;
+  display: block;
+  margin: 30px auto;
+  font-size: 8px;
   color: rgb(255, 255, 255);
+  text-align: center;
+}
+a {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
 }
