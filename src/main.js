@@ -28,10 +28,10 @@ function showTime(time) {
 
   // background adaptation function
   let myContainer = document.querySelector(".my-container");
-  let weatherIcon = document.querySelector(".weather-icon");
   if (currentHour >= 18 || currentHour < 6) {
     myContainer.style.background =
       "linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)";
+    document.querySelector(".image").src = "images/logo-inverted.png";
   } else {
     myContainer.style.background =
       "linear-gradient(112.4deg, rgb(176, 174, 225) 44.9%, rgb(135, 197, 235) 94.5%)";
