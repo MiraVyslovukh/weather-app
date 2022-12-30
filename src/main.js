@@ -113,27 +113,6 @@ search.addEventListener("submit", handleSubmit);
 let btn = document.querySelector("#btn");
 btn.addEventListener("click", retrievePosition);
 
-// cercius vs. fahrenheit function call
-let tempInC = null;
-
-function changeToFahrenheit(event) {
-  event.preventDefault();
-  let temp = document.querySelector(".temperature");
-  let tempInF = Math.round((tempInC * 9) / 5 + 32);
-  temp.innerHTML = tempInF;
-}
-
-function changetoCelcius(event) {
-  event.preventDefault();
-  let temp = document.querySelector(".temperature");
-  temp.innerHTML = tempInC;
-}
-
-let celcius = document.querySelector("#celcius");
-celcius.addEventListener("click", changetoCelcius);
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", changeToFahrenheit);
-
 // display forecast
 // convert given timestamp value into an index
 function formatDate(timestamp) {

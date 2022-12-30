@@ -140,24 +140,6 @@ hr {
   display: none;
 }
 
-#celcius,
-#fahrenheit {
-  font-size: 10px;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-}
-
-#celcius:hover {
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-#fahrenheit:hover {
-  text-decoration: underline;
-  font-weight: bold;
-}
-
 .units {
   font-size: 12px;
   position: relative;
@@ -171,6 +153,7 @@ hr {
   color: rgb(255, 255, 255);
   text-align: center;
 }
+
 a {
   color: rgb(255, 255, 255);
   font-weight: bold;
