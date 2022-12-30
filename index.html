@@ -32,89 +32,77 @@
   </head>
   <body>
     <div class="container my-container">
-        <div class="weather-app-icon">
-          <img src="images/logo.png" alt="Weather app logo" class="image" style="max-width: 120px;">
-        </div>
+      <div class="weather-app-icon">
+        <img
+          src="images/logo.png"
+          alt="Weather app logo"
+          class="image"
+          id="image"
+          style="max-width: 120px"
+        />
+      </div>
       <div class="row align-items-center">
-      <div class="col-7 my-col mt-2">
-        <form id="search-field">
-          <input
-            type="search"
-            autofocus="on"
-            autocomplete="off"
-            id="search-engine"
-            placeholder="Type a city..."
-          />
-          <input id="submit" type="submit" value="Submit" />
-        </form>
+        <div class="col-7 my-col mt-2">
+          <form id="search-field">
+            <input
+              type="search"
+              autofocus="on"
+              autocomplete="off"
+              id="search-engine"
+              placeholder="Type a city..."
+            />
+            <input id="submit" type="submit" value="Submit" />
+          </form>
+        </div>
+        <div class="col-5 my-col mt-2">
+          <button id="btn">My location</button>
+        </div>
       </div>
-      <div class="col-5 my-col mt-2">
-        <button id="btn">My location</button>
+      <div class="row align-items-center">
+        <div class="col my-col mt-2 city-name">Lviv</div>
       </div>
-    </div>
-    <div class="row align-items-center">
-      <div class="col my-col mt-2 city-name">Lviv</div>
-    </div>
-    <div class="row align-items-center">
-      <div class="col my-col temp-info">
-        <span class="temperature"></span>
-        <span class="units"
-          ><a href="#" id="celcius">°C</a> |
-          <a href="#" id="fahrenheit">°F</a></span
+      <div class="row align-items-center">
+        <div class="col my-col temp-info">
+          <span class="temperature"></span>
+          <span class="units"
+            ><a href="#" id="celcius">°C</a> |
+            <a href="#" id="fahrenheit">°F</a></span
+          >
+        </div>
+        <div class="row justify-content-center">
+          <div class="row justify-content-center">
+            <img src="" id="weather-icon" />
+          </div>
+          <div class="row">
+            <div class="col my-col mt-1 mb-1">
+              <div class="description">Clouds</div>
+            </div>
+            <div class="general-info">
+              <span class="day">Monday</span
+              ><span class="current-time">10:30 AM></span>
+              <div class="wind">Wind:</div>
+              <div class="humidity">Humidity:</div>
+            </div>
+            <div class="row justify-content-evenly"></div>
+          </div>
+        </div>
+        <div class="forecast-temp mt-4 forecast" id="forecast">
+      </div>
+      <div class="git-rep">
+        This project was coded by
+        <a href="https://github.com/MiraVyslovukh" target="_blank"
+          >Mira Vyslovukh</a
+        >
+        and is open-sourced on
+        <a href="https://github.com/MiraVyslovukh/weather-app" target="_blank"
+          >GitHub</a
+        >
+        and hosted on
+        <a href="https://voluble-pudding-b4c8dc.netlify.app/" target="_blank"
+          >Netlify</a
         >
       </div>
-      <div class="row justify-content-center">
-        <div class="row justify-content-center">
-          <img
-            src="https://openweathermap.org/img/wn/04d@2x.png"
-            id="weather-icon"
-          />
-        </div>
-        <div class="row">
-          <div class="col my-col mt-1 mb-1">
-            <div class="description">Clouds</div>
-          </div>
-          <div class="general-info">
-            <span class="day">Monday</span
-            ><span class="current-time">10:30 AM></span>
-            <div class="wind">Wind:</div>
-            <div class="humidity">Humidity:</div>
-          </div>
-          <div class="row justify-content-evenly">
-          </div>
-        </div>
-      </div>
-
-      <div class="row justify-content-around mt-4 days">
-        <div class="col my-col">Mon</div>
-        <div class="col my-col">Tue</div>
-        <div class="col my-col">Wed</div>
-        <div class="col my-col">Thur</div>
-        <div class="col my-col">Fri</div>
-        <hr />
-        <div class="col my-col emojis"><i class="fa-solid fa-sun"></i></div>
-        <div class="col my-col emojis">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-        <div class="col my-col emojis"><i class="fa-regular fa-sun"></i></div>
-        <div class="col my-col emojis">
-          <i class="fa-solid fa-temperature-high"></i>
-        </div>
-        <div class="col my-col emojis">
-          <i class="fa-solid fa-cloud-rain"></i>
-        </div>
-      </div>
-      <div class="row justify-content-around mt-1 days">
-        <div class="col my-col">22°C</div>
-        <div class="col my-col">18°C</div>
-        <div class="col my-col">24°C</div>
-        <div class="col my-col">28°C</div>
-        <div class="col my-col">22°C</div>
-      </div>
-        <div class="git-rep">
-        This project was coded by <a href="https://github.com/MiraVyslovukh" target="_blank">Mira Vyslovukh</a> and is open-sourced on <a href="https://github.com/MiraVyslovukh/weather-app" target="_blank">GitHub</a> and hosted on <a href="https://voluble-pudding-b4c8dc.netlify.app/" target="_blank">Netlify</a>
-  </div>
-      </div>
+    </div>
 
     <script src="src/main.js"></script>
   </body>

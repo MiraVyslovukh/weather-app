@@ -7,7 +7,7 @@ body {
   padding-right: 40px;
   padding-top: 40px;
   max-width: 350px;
-  min-height: 600px;
+  min-height: 580px;
   background: linear-gradient(
     112.4deg,
     rgb(176, 174, 225) 44.9%,
@@ -21,6 +21,7 @@ body {
 .my-col {
   /* border: 1px solid black; */
   text-align: center;
+  padding: 0;
 }
 
 .weather-app-icon .image {
@@ -40,8 +41,7 @@ body {
   font-size: 30px;
 }
 
-.days,
-.message {
+.forecast {
   font-size: 12px;
   margin: 0 auto;
 }
@@ -118,8 +118,22 @@ hr {
   background-color: #fff;
 }
 
-.emojis {
-  font-size: 25px;
+.weather-forecast-temperature {
+  font-size: 10px;
+  text-align: center;
+}
+
+.forecast-day {
+  opacity: 0.7;
+}
+
+.forecast-temp-min {
+  opacity: 0.5;
+}
+
+.forecast-temp-max,
+.forecast-temp-min {
+  font-size: 9px;
 }
 
 #submit {

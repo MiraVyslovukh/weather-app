@@ -39,6 +39,13 @@ function showTime(time) {
   return currentHour + ":" + currentMinutes;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "4c9b53e4f8f5eb00df5915bdca340605";
+  let units = "metric";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiURL).then(displayForecast);
+}
+
 function showWeather(response) {
   document.querySelector(".city-name").innerHTML = response.data.name;
   document.querySelector("#search-engine").value = "";
@@ -59,6 +66,8 @@ function showWeather(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 // search engine function & api call
@@ -125,4 +134,45 @@ celcius.addEventListener("click", changetoCelcius);
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeToFahrenheit);
 
-searchCity("Lviv");
+// display forecast
+// convert given timestamp value into an index
+function formatDate(timestamp) {
+  let day = new Date(timestamp * 1000);
+  let date = day.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row justify-content-evenly">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      // every forecast equals itself + one more self and a div element
+      // to be triggered 5 times
+      forecastHTML += `<div class="col-2 my-col"> 
+           <div class="forecast-day">${formatDate(forecastDay.dt)}</div>
+           <img
+            src="https://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png"
+            id="forecast-weather-icon" width="40"
+          />
+          <div class="weather-forecast-temperature">
+        <span class="forecast-temp-max">${Math.round(
+          forecastDay.temp.max
+        )}°</span>
+        <span class="forecast-temp-min">${Math.round(
+          forecastDay.temp.min
+        )}°</span>
+        </div>
+        </div>
+        `;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+searchCity("Lviv"); // default city that is searched on load
